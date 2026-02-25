@@ -2,126 +2,61 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Vite;
+
+use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Validation\Rules\Password;
-use Illuminate\Foundation\Vite;
+
+use Faker\Factory;
+use Faker\Generator;
 
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * Registra serviços no container.
-     *
-     * Ideal para bindings:
-     * - Interfaces -> Implementações
-     * - Singletons
-     * - Serviços externos
+     * Register any application services.
      */
     public function register(): void
     {
-        //
+
     }
 
     /**
-     * Inicializa configurações globais da aplicação.
-     *
-     * Aqui centralizamos regras de:
-     * - Segurança
-     * - Proteção de banco
-     * - Performance
-     * - Política de senha
-     * - HTTPS automático
+     * Bootstrap any application services.
      */
     public function boot(): void
     {
-        $this->configureEloquent();
-        $this->configureDatabaseProtection();
-        $this->configureFrontendPerformance();
-        $this->configureSecurity();
-        $this->configurePasswordPolicy();
-    }
+        /** Configura modo estrito do Eloquent **/
+       Model::shouldBeStrict(!$this->app->isProduction());
 
-    /**
-     * Ativa modo estrito do Eloquent em ambiente local.
-     *
-     * Benefícios:
-     * - Evita acessar atributos inexistentes
-     * - Detecta lazy loading não intencional
-     * - Evita mass assignment indevido
-     *
-     * Em produção é desativado para não quebrar a aplicação.
-     */
-    protected function configureEloquent(): void
-    {
-        Model::shouldBeStrict(!app()->isProduction());
-    }
+       /** Protege banco contra comandos destrutivos em produção **/
+       DB::prohibitDestructiveCommands($this->app->isProduction());
 
-    /**
-     * Impede execução de comandos destrutivos em produção.
-     *
-     * Protege contra:
-     * - migrate:fresh
-     * - db:wipe
-     * - migrate:reset
-     */
-    protected function configureDatabaseProtection(): void
-    {
-        DB::prohibitDestructiveCommands(app()->isProduction());
-    }
-
-    /**
-     * Ativa prefetch agressivo do Vite.
-     *
-     * Melhora performance:
-     * - Pré-carregamento de JS
-     * - Pré-carregamento de CSS
-     * - Melhor experiência do usuário
-     */
-    protected function configureFrontendPerformance(): void
-    {
+        /** Melhora performance do frontend **/
         Vite::useAggressivePrefetching();
-    }
 
-    /**
-     * Força HTTPS automaticamente em produção.
-     *
-     * Evita:
-     * - Conteúdo misto
-     * - Problemas com SSL
-     * - Vulnerabilidades por HTTP
-     */
-    protected function configureSecurity(): void
-    {
-        URL::forceHttps(app()->isProduction());
-    }
+        /** Configura segurança de URL **/
+        if ($this->app->isProduction()) {
+            URL::forceHttps();
+        }
 
-    /**
-     * Define política global de senha.
-     *
-     * Produção:
-     * - Mínimo 12 caracteres
-     * - Letras obrigatórias
-     * - Maiúsculas e minúsculas
-     * - Números
-     * - Símbolos
-     * - Verificação contra vazamentos
-     *
-     * Desenvolvimento:
-     * - Mínimo 6 caracteres (facilita testes)
-     */
-    protected function configurePasswordPolicy(): void
-    {
+        /** Define política global de senha **/
         Password::defaults(function () {
-            return app()->isProduction()
+            return $this->app->isProduction()
                 ? Password::min(12)
                     ->letters()
                     ->mixedCase()
                     ->numbers()
                     ->symbols()
                     ->uncompromised()
-                : Password::min(6);
+                : Password::max(255);
+        });
+
+        /** Registra o Faker com localidade brasileira  **/
+        $this->app->singleton(Generator::class, function () {
+            return Factory::create('pt_BR');
         });
     }
 }
