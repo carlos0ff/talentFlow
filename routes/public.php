@@ -1,10 +1,10 @@
 <?php
+declare(strict_types=1);
+
 
 use Illuminate\Support\Facades\Route;
 
-/**
- * Routes - Home
- */
 
-Route::get("/", WebController::class)->name("home");
-
+Route::get('/', function () {
+     return Inertia::render('Welcome');
+})->name('home');

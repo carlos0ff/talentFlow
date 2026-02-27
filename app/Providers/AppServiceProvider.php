@@ -35,7 +35,7 @@ class AppServiceProvider extends ServiceProvider
        DB::prohibitDestructiveCommands($this->app->isProduction());
 
         /** Melhora performance do frontend **/
-        Vite::useAggressivePrefetching();
+        app(Vite::class)->useAggressivePrefetching();
 
         /** Configura segurança de URL **/
         if ($this->app->isProduction()) {
