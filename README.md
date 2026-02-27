@@ -1,4 +1,4 @@
-# 🚀 Nexus HR Ecosystem
+<h1 align="center">🚀 TalentFlow</h1>
 
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
@@ -6,7 +6,9 @@
 ![PWA](https://img.shields.io/badge/PWA-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-O **Nexus HR Ecosystem** é uma solução completa e robusta para a gestão de Recursos Humanos, desenvolvida para modernizar processos de folha de pagamento, recrutamento e controle de jornada. O projeto destaca-se pela implementação de um **PWA (Progressive Web App)** de alta performance com capacidades offline e geofencing.
+O **Nexus HR Ecosystem** é uma solução completa e robusta para a gestão de Recursos Humanos, desenvolvida para 
+modernizar processos de folha de pagamento, recrutamento e controle de jornada. O projeto destaca-se pela 
+implementação de um **PWA (Progressive Web App)** de alta performance com capacidades offline e geofencing.
 
 ---
 
@@ -49,18 +51,18 @@ O **Nexus HR Ecosystem** é uma solução completa e robusta para a gestão de R
 ## 🚀 Como Executar o Projeto
 
 ### Pré-requisitos
-- PHP >= 8.1
+- PHP >= 8.4
 - Servidor Web (Apache/Nginx ou Servidor Interno do PHP)
 - Navegador moderno com suporte a PWA
 
 ### Instalação
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/nexus-hr-ecosystem.git
+   git clone https://github.com/carlos0ff/talentFlow.git
    ```
 2. Navegue até o diretório:
    ```bash
-   cd nexus-hr-ecosystem
+   cd talentFlow
    ```
 3. Inicie o servidor local:
    ```bash
