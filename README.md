@@ -1,59 +1,90 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🚀 Nexus HR Ecosystem
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![PWA](https://img.shields.io/badge/PWA-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-## About Laravel
+O **Nexus HR Ecosystem** é uma solução completa e robusta para a gestão de Recursos Humanos, desenvolvida para modernizar processos de folha de pagamento, recrutamento e controle de jornada. O projeto destaca-se pela implementação de um **PWA (Progressive Web App)** de alta performance com capacidades offline e geofencing.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🌟 Funcionalidades Principais
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 📊 Dashboard Analítico (Visão Geral)
+- Monitoramento de KPIs em tempo real (Turnover, Presença, Média Salarial).
+- Gráficos interativos com **Chart.js** para análise de departamentos e cargos.
+- Interface moderna com suporte nativo a **Dark Mode**.
 
-## Learning Laravel
+### 📱 PWA de Registro de Ponto "Pro"
+- **Offline-First:** Registro de jornada garantido mesmo sem conexão, utilizando **IndexedDB** e **Service Workers**.
+- **Segurança por Foto (Selfie):** Verificação visual obrigatória no momento do registro.
+- **Geofencing Inteligente:** Validação de localização via GPS, permitindo registros apenas em áreas autorizadas.
+- **Exportação CSV:** Relatórios detalhados gerados diretamente no dispositivo.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### 🤝 Sistema de Recrutamento Inteligente (ATS)
+- **Pipeline Kanban:** Gestão visual de candidatos (Triagem, Entrevista, Proposta).
+- **Portal de Vagas:** Interface otimizada para divulgação e captação de talentos.
+- **Gestão de Candidatos:** Filtros avançados e histórico completo de interações.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 💰 Gestão de Folha de Pagamento
+- Cálculo automatizado de proventos, descontos e impostos.
+- Estrutura de cargos e salários integrada.
+- Backend escalável em **PHP/Laravel**.
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🛠️ Tecnologias Utilizadas
 
-### Premium Partners
+- **Backend:** PHP 8.x / Laravel (APIs RESTful)
+- **Frontend:** TailwindCSS, JavaScript (ES6+), HTML5
+- **Mobile:** PWA (Service Workers, Manifest, Background Sync)
+- **Banco de Dados:** MySQL / IndexedDB (Local)
+- **Gráficos:** Chart.js
+- **Ícones:** Lucide Icons
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## 🚀 Como Executar o Projeto
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Pré-requisitos
+- PHP >= 8.1
+- Servidor Web (Apache/Nginx ou Servidor Interno do PHP)
+- Navegador moderno com suporte a PWA
 
-## Code of Conduct
+### Instalação
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/nexus-hr-ecosystem.git
+   ```
+2. Navegue até o diretório:
+   ```bash
+   cd nexus-hr-ecosystem
+   ```
+3. Inicie o servidor local:
+   ```bash
+   php -S localhost:8000
+   ```
+4. Acesse no navegador: `http://localhost:8000/visao-geral-melhorada.html`
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## 📈 Aprendizados Técnicos
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Este projeto foi um marco no meu desenvolvimento como **Desenvolvedor Full Stack**, permitindo-me dominar:
+- **Sincronização Offline:** Lógica complexa para garantir a integridade dos dados em ambientes sem rede.
+- **UX Mobile-First:** Criação de interfaces que se comportam como apps nativos.
+- **Segurança de Dados:** Implementação de validações geográficas e visuais para processos críticos.
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 👤 Autor
+
+**José Carlos**
+- LinkedIn: [carlos0ff](https://www.linkedin.com/in/carlos0ff)
+- GitHub: [carlos0ff](https://github.com/carlos0ff)
+
+---
+
+> "Quality for Passion" - Fada Group Project
