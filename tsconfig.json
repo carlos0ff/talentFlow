@@ -13,10 +13,12 @@
         "moduleResolution": "bundler",
         "paths": {
             "@/*": ["./resources/js/*"],
+            "ziggy-js": ["./vendor/tightenco/ziggy"]
         },
         "types": [
             "vite/client",
             "./resources/js",
+            "./vendor/tighteco/ziggy/src/js/index.js"
         ],
         "resolveJsonModule": true,
         "allowJs": true,

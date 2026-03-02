@@ -13,6 +13,9 @@
     {{-- Core stylesheet and JavaScript --}}
     @vite(['resources/js/app.ts','resources/css/app.css'])
 
+    {{-- --}}
+    @routes()
+
     {{-- Core inertia Head --}}
     @inertiaHead
 
