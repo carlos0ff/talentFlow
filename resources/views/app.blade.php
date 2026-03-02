@@ -22,7 +22,7 @@
 </head>
 <body class="font-medium antialiased">
 
-{{-- InertiaJS root element --}}
+{{-- Core InertiaJS --}}
 @inertia
 
 </body>
